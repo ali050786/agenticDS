@@ -16,12 +16,17 @@ class SandboxAgent:
         
         # Use OpenRouter
         api_key = os.getenv("OPENROUTER_API_KEY") 
-        # Fallback to OpenAI key if OpenRouter not explicit, or empty string if neither
+        # Fallback to OpenAI key if OpenRouter not explicit
         if not api_key:
-            api_key = os.getenv("OPENAI_API_KEY", "")
+            api_key = os.getenv("OPENAI_API_KEY")
+        
+        # If still no key, use a placeholder to pass Pydantic validation
+        # (OpenRouter free models might work, or it will fail with 401 later which is better than crash)
+        if not api_key:
+            api_key = "sk-or-v1-placeholder"
 
         self.llm = ChatOpenAI(
-            model="nex-agi/deepseek-v3.1-nex-n1:free",
+            model="tngtech/deepseek-r1t2-chimera:free",
             openai_api_key=api_key,
             openai_api_base="https://openrouter.ai/api/v1",
             temperature=0

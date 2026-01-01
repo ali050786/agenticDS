@@ -34,12 +34,11 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    env_file:
+      - ./backend/.env
     environment:
       DATABASE_URL: postgresql://dsm_user:dsm_password@postgres:5432/dsm_db
       REDIS_URL: redis://redis:6379
-      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
-      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
-      OPENROUTER_MODEL: ${OPENROUTER_MODEL}
     ports:
       - "8000:8000"
     depends_on:
