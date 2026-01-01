@@ -1,0 +1,16 @@
+{
+    "name": "agentic-ds-plugin",
+    "version": "1.0.0",
+    "description": "Figma plugin for Agentic Design System",
+    "main": "code.js",
+    "scripts": {
+        "build": "esbuild src/code.ts --bundle --outfile=code.js",
+        "watch": "npm run build -- --watch"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@figma/plugin-typings": "^1.84.0",
+        "esbuild": "^0.19.11",
+        "typescript": "^5.3.3"
+    }
+}

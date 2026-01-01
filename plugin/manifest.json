@@ -1,0 +1,12 @@
+{
+    "name": "Agentic Design System",
+    "id": "agentic-ds-plugin",
+    "api": "1.0.0",
+    "main": "code.js",
+    "ui": "src/ui.html",
+    "capabilities": [],
+    "enableProposedApi": false,
+    "editorType": [
+        "figma"
+    ]
+}

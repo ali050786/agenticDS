@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "agentic-ds-backend"
+version = "0.1.0"
+description = "Backend for Agentic Design System"
+authors = ["Admin <admin@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.0"
+uvicorn = "^0.27.0"
+sqlalchemy = "^2.0.25"
+psycopg2-binary = "^2.9.9"
+redis = "^5.0.1"
+python-multipart = "^0.0.9"
+langchain = "^0.1.0"
+langchain-openai = "^0.0.5"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
